@@ -1,0 +1,194 @@
+/* 
+ * Vision Clarity Institute - Grid System
+ * Responsive grid system for page layouts
+ */
+
+/* Grid container */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Standard grid layouts */
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-3, 
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2, 
+  .grid-3, 
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Grid with sidebar */
+.grid-sidebar {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+
+.grid-sidebar-left {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .grid-sidebar,
+  .grid-sidebar-left {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    order: 1;
+  }
+  
+  .main-content {
+    order: 0;
+  }
+}
+
+/* Service grid layout */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.service-grid.reverse {
+  direction: rtl;
+}
+
+.service-grid.reverse > * {
+  direction: ltr;
+}
+
+@media (max-width: 992px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .service-grid.reverse {
+    direction: ltr;
+  }
+  
+  .service-image {
+    order: -1;
+  }
+  
+  .service-grid.reverse .service-image {
+    order: -1;
+  }
+}
+
+/* Auto-fit grid for cards */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Grid areas for complex layouts */
+.grid-areas {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid-area-full {
+  grid-column: span 12;
+}
+
+.grid-area-large {
+  grid-column: span 8;
+}
+
+.grid-area-medium {
+  grid-column: span 6;
+}
+
+.grid-area-small {
+  grid-column: span 4;
+}
+
+.grid-area-tiny {
+  grid-column: span 3;
+}
+
+@media (max-width: 992px) {
+  .grid-area-large {
+    grid-column: span 12;
+  }
+  
+  .grid-area-medium {
+    grid-column: span 6;
+  }
+  
+  .grid-area-small {
+    grid-column: span 6;
+  }
+  
+  .grid-area-tiny {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-area-medium,
+  .grid-area-small,
+  .grid-area-tiny {
+    grid-column: span 12;
+  }
+  
+  .grid-areas {
+    grid-gap: 1.5rem;
+  }
+}
+
+/* Utility classes for grid items */
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.grid-stretch {
+  align-items: stretch;
+}
+
+.grid-start {
+  align-items: start;
+}
+
+.grid-end {
+  align-items: end;
+}

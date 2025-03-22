@@ -1,0 +1,329 @@
+/* 
+ * Vision Clarity Institute - Section Layouts
+ * Common section layouts used throughout the site
+ */
+
+/* Default section padding */
+.section {
+  padding: 4rem 0;
+}
+
+.section-small {
+  padding: 2rem 0;
+}
+
+.section-large {
+  padding: 6rem 0;
+}
+
+/* Section backgrounds */
+.bg-light {
+  background-color: var(--bg-secondary);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.bg-secondary-light {
+  background-color: var(--secondary-light);
+}
+
+/* Hero section */
+.hero-section {
+  padding: 6rem 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: 1.5rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-xl);
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Page header section */
+.page-header {
+  padding: 3rem 0;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  opacity: 0.9;
+  max-width: 800px;
+  margin-bottom: 0;
+}
+
+/* Feature section */
+.feature-section {
+  padding: 4rem 0;
+}
+
+.feature-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.feature-section-title h2 {
+  margin-bottom: 1rem;
+}
+
+.feature-section-title p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+/* Service section */
+.service-section {
+  padding: 5rem 0;
+}
+
+.service-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.service-content p {
+  margin-bottom: 1.5rem;
+}
+
+.service-list {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.service-list li {
+  margin-bottom: 0.75rem;
+}
+
+.service-image img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+
+.service-cta {
+  margin-top: 2rem;
+}
+
+/* CTA section */
+.cta-section {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-3xl);
+}
+
+.cta-section p {
+  margin-bottom: 2rem;
+  font-size: var(--font-size-lg);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Testimonials section */
+.testimonial-section {
+  padding: 5rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.testimonial-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* FAQ section */
+.faq-section {
+  padding: 4rem 0;
+}
+
+.faq-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+}
+
+/* Contact section */
+.contact-section {
+  padding: 4rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+.contact-info {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.contact-info-item {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-info-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .section-large {
+    padding: 5rem 0;
+  }
+  
+  .hero-section {
+    padding: 5rem 0;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+  
+  .section-large {
+    padding: 4rem 0;
+  }
+  
+  .hero-section {
+    padding: 4rem 0;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+  
+  .page-header {
+    padding: 2rem 0;
+  }
+  
+  .feature-section-title,
+  .testimonial-section-title,
+  .faq-section-title {
+    margin-bottom: 2rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-section {
+    padding: 3rem 0;
+  }
+  
+  .cta-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .cta-section p {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* RTL adjustments */
+[dir="rtl"] .service-list {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
+[dir="rtl"] .contact-info-item {
+  flex-direction: row-reverse;
+}

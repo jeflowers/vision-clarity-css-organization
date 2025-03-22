@@ -1,0 +1,183 @@
+/* 
+ * Vision Clarity Institute - Containers
+ * Container components for page layout
+ */
+
+:root {
+  --container-max-width: 1200px;
+  --container-padding: 1rem;
+}
+
+/* Main container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* Fluid container (full width) */
+.container-fluid {
+  width: 100%;
+  padding: 0 var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* Container sizes */
+.container-small {
+  max-width: 800px;
+}
+
+.container-medium {
+  max-width: 1000px;
+}
+
+.container-large {
+  max-width: 1400px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+/* Content containers */
+.content-container {
+  padding: 2rem 0;
+}
+
+.content-container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Box containers */
+.box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.box-small {
+  padding: 1.5rem;
+}
+
+.box-large {
+  padding: 3rem;
+}
+
+/* Responsive adjustments for boxes */
+@media (max-width: 768px) {
+  .box {
+    padding: 1.5rem;
+  }
+  
+  .box-large {
+    padding: 2rem;
+  }
+  
+  .content-container {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Utility containers */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Responsive flex container */
+@media (max-width: 768px) {
+  .flex-container.responsive {
+    flex-direction: column;
+  }
+  
+  .flex-container.responsive > * {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .flex-container.responsive > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Gap utilities */
+.gap-small {
+  gap: 1rem;
+}
+
+.gap-medium {
+  gap: 2rem;
+}
+
+.gap-large {
+  gap: 3rem;
+}
+
+/* RTL support */
+[dir="rtl"] .flex-start {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .flex-end {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .items-start {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .items-end {
+  align-items: flex-start;
+}
