@@ -1,0 +1,117 @@
+/* 
+ * Vision Clarity Institute - Typography
+ * Typography settings including fonts, sizes, weights, and line heights
+ */
+
+:root {
+  /* Font families */
+  --font-primary: 'Open Sans', 'Roboto', system-ui, sans-serif;
+  --font-secondary: 'Roboto', 'Arial', sans-serif;
+  --font-heading: 'Open Sans', 'Roboto', system-ui, sans-serif;
+  
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Font sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-md: 1.125rem;  /* 18px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 1.75rem;  /* 28px */
+  --font-size-3xl: 2rem;     /* 32px */
+  --font-size-4xl: 2.5rem;   /* 40px */
+  
+  /* Line heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  
+  /* Paragraphs */
+  --paragraph-spacing: 1.5rem;
+}
+
+/* Base typography styles */
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--text-primary);
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-md);
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: var(--paragraph-spacing);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Language-specific typographic adjustments */
+[lang="zh"] {
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', 'SimHei', sans-serif;
+}
+
+[lang="ko"] {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+[lang="hy"] {
+  font-family: 'Noto Sans Armenian', system-ui, sans-serif;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 2rem;     /* 32px */
+    --font-size-3xl: 1.75rem;  /* 28px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-xl: 1.25rem;   /* 20px */
+  }
+}

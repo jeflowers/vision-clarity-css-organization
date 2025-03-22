@@ -1,0 +1,47 @@
+/* 
+ * Vision Clarity Institute - Colors
+ * CSS variables for consistent color usage across the site
+ */
+
+:root {
+  /* Primary brand colors */
+  --primary-color: #4CAF50; /* Green */
+  --primary-dark: #388E3C; /* Darker green for hover states */
+  --primary-light: #A5D6A7; /* Light green for backgrounds */
+  
+  /* Secondary colors */
+  --secondary-color: #6c757d; /* Gray */
+  --secondary-dark: #5a6268; /* Darker gray for hover states */
+  --secondary-light: #e9ecef; /* Light gray for backgrounds */
+  
+  /* Text colors */
+  --text-primary: #333333; /* Near black for main text */
+  --text-secondary: #555555; /* Dark gray for secondary text */
+  --text-light: #FFFFFF; /* White text for dark backgrounds */
+  --text-muted: #7F8C8D; /* Muted text color */
+  
+  /* Background colors */
+  --bg-primary: #FFFFFF; /* White */
+  --bg-secondary: #f8f8f8; /* Light gray */
+  --bg-dark: #333333; /* Dark gray/black */
+  
+  /* Feedback colors */
+  --success: #28a745; /* Green */
+  --info: #17a2b8; /* Blue */
+  --warning: #ffc107; /* Yellow */
+  --danger: #dc3545; /* Red */
+  
+  /* Border colors */
+  --border-light: #dee2e6; /* Light gray border */
+  --border-dark: #ced4da; /* Darker gray border */
+}
+
+/* Dark theme colors (if needed) */
+.dark-theme {
+  --bg-primary: #333333;
+  --bg-secondary: #4a4a4a;
+  --text-primary: #f8f8f8;
+  --text-secondary: #e0e0e0;
+  --border-light: #555555;
+  --border-dark: #777777;
+}

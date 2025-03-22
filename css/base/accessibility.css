@@ -1,0 +1,104 @@
+/* 
+ * Vision Clarity Institute - Accessibility
+ * Styles that enhance accessibility features
+ */
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  z-index: 1001;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Screen reader only class - visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Make the element visible when it's focused by a keyboard user */
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles that don't rely solely on outline */
+:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast */
+.high-contrast-text {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Aria live regions for dynamic content */
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: relative;
+}
+
+/* Required form field labels */
+.required::after {
+  content: "*";
+  color: var(--danger);
+  margin-left: 0.25rem;
+}
+
+/* Form field error states */
+.error-message {
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-top: 0.25rem;
+}
+
+input.error,
+textarea.error,
+select.error {
+  border-color: var(--danger);
+}
+
+/* Keyboard focus indicator for interactive elements */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .btn,
+  .card,
+  .modal-content {
+    border: 2px solid;
+  }
+}
