@@ -1,0 +1,154 @@
+/* 
+ * Vision Clarity Institute - Internationalization Support
+ * Styles for supporting multiple languages
+ */
+
+/* Language-specific font stacks */
+:root {
+  /* Default Latin fonts */
+  --font-latin: 'Open Sans', 'Roboto', system-ui, sans-serif;
+  
+  /* Chinese fonts */
+  --font-zh: 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', 'SimHei', sans-serif;
+  
+  /* Korean fonts */
+  --font-ko: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  
+  /* Armenian fonts */
+  --font-hy: 'Noto Sans Armenian', system-ui, sans-serif;
+  
+  /* Hebrew fonts */
+  --font-he: 'Heebo', 'Rubik', 'Arial Hebrew', 'David', sans-serif;
+  
+  /* Russian fonts */
+  --font-ru: 'PT Sans', 'Roboto', 'Arial', sans-serif;
+  
+  /* Persian/Farsi fonts */
+  --font-fa: 'Vazirmatn', 'Tahoma', 'Iranian Sans', sans-serif;
+  
+  /* Arabic fonts */
+  --font-ar: 'Cairo', 'Amiri', 'Tahoma', 'Traditional Arabic', sans-serif;
+}
+
+/* Apply language-specific fonts */
+[lang="en"], 
+[lang="es"], 
+[lang="tl"] {
+  font-family: var(--font-latin);
+}
+
+[lang="zh"] {
+  font-family: var(--font-zh);
+}
+
+[lang="ko"] {
+  font-family: var(--font-ko);
+}
+
+[lang="hy"] {
+  font-family: var(--font-hy);
+}
+
+[lang="he"] {
+  font-family: var(--font-he);
+}
+
+[lang="ru"] {
+  font-family: var(--font-ru);
+}
+
+[lang="fa"] {
+  font-family: var(--font-fa);
+}
+
+[lang="ar"] {
+  font-family: var(--font-ar);
+}
+
+/* Language selector styling */
+.language-selector select {
+  padding-right: 1.5rem;
+  background-position: right 0.5rem center;
+  background-size: 0.75rem;
+  background-repeat: no-repeat;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+/* Adjust for RTL languages */
+[dir="rtl"] .language-selector select {
+  padding-right: 0.5rem;
+  padding-left: 1.5rem;
+  background-position: left 0.5rem center;
+}
+
+/* Cultural variations for content presentation */
+
+/* Authority-focused content (Chinese, Korean, Russian) */
+[lang="zh"] .credentials-highlight,
+[lang="ko"] .credentials-highlight,
+[lang="ru"] .credentials-highlight {
+  display: block;
+}
+
+/* Family-oriented content (Spanish, Filipino) */
+[lang="es"] .family-highlight,
+[lang="tl"] .family-highlight {
+  display: block;
+}
+
+/* Community-focused content (Armenian) */
+[lang="hy"] .community-highlight {
+  display: block;
+}
+
+/* Default state is hidden */
+.credentials-highlight,
+.family-highlight,
+.community-highlight,
+.technology-highlight {
+  display: none;
+}
+
+/* Testimonial focus variations */
+.focus-results .testimonial-result,
+.focus-experience .testimonial-experience,
+.focus-authority .testimonial-authority,
+.focus-personal .testimonial-personal,
+.focus-detailed .testimonial-detailed,
+.focus-community .testimonial-community {
+  display: block;
+}
+
+/* Date and time format adjustments */
+[lang="en"] .date-format.short:after { content: attr(data-month) "/" attr(data-day) "/" attr(data-year); }
+[lang="es"] .date-format.short:after { content: attr(data-day) "/" attr(data-month) "/" attr(data-year); }
+[lang="zh"] .date-format.short:after { content: attr(data-year) "-" attr(data-month) "-" attr(data-day); }
+
+/* Phone number format adjustments */
+[lang="en"] .phone-format:after { content: "(" attr(data-area) ") " attr(data-prefix) "-" attr(data-line); }
+[lang="zh"] .phone-format:after { content: attr(data-area) " " attr(data-prefix) " " attr(data-line); }
+
+/* Honorifics display */
+[lang="en"] .honorific { display: none; }
+[lang="ko"] .honorific,
+[lang="zh"] .honorific,
+[lang="ja"] .honorific { display: inline; }
+
+/* Translation placeholders */
+[data-i18n] {
+  visibility: visible;
+}
+
+/* Screen reader only text for language changes */
+.language-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
