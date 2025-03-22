@@ -1,0 +1,26 @@
+{
+  "name": "vision-clarity-css",
+  "version": "1.0.0",
+  "description": "CSS organization for Vision Clarity Institute website",
+  "scripts": {
+    "build": "postcss css/main.css -o dist/css/main.css",
+    "lint": "stylelint \"css/**/*.css\"",
+    "dev": "postcss css/main.css -o dist/css/main.css --watch"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "cssnano": {
+        "preset": "default"
+      }
+    }
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.15",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1"
+  }
+}
