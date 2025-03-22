@@ -1,0 +1,323 @@
+/* 
+ * Vision Clarity Institute - Navigation
+ * Styles for navigation components
+ */
+
+/* Main navigation (moved to header.css) */
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs-item:not(:last-child)::after {
+  content: '/';
+  margin: 0 0.5rem;
+  color: var(--text-secondary);
+}
+
+.breadcrumbs-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs-link:hover,
+.breadcrumbs-link:focus {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.breadcrumbs-current {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Side navigation */
+.side-nav {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.side-nav-header {
+  background-color: var(--primary-color);
+  padding: 1.25rem 1.5rem;
+  color: white;
+}
+
+.side-nav-title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.side-nav-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.side-nav-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.side-nav-item:last-child {
+  border-bottom: none;
+}
+
+.side-nav-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.side-nav-link:hover,
+.side-nav-link:focus {
+  background-color: var(--bg-secondary);
+}
+
+.side-nav-link.active {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-medium);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Dropdown navigation */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle::after {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -0.25em;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+  transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  clear: both;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-item {
+  margin: 0 0.25rem;
+}
+
+.pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  background-color: white;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.pagination-link:hover,
+.pagination-link:focus {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination-link.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pagination-link.disabled {
+  color: var(--text-secondary);
+  pointer-events: none;
+  background-color: var(--bg-secondary);
+  border-color: var(--border-light);
+}
+
+/* Tabs navigation */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.tab-item {
+  margin-right: 2rem;
+  margin-bottom: -1px;
+}
+
+.tab-link {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  font-weight: var(--font-weight-medium);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-link:hover,
+.tab-link:focus {
+  color: var(--primary-color);
+}
+
+.tab-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* RTL adjustments */
+[dir="rtl"] .breadcrumbs-item:not(:last-child)::after {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .side-nav-link.active {
+  border-left: none;
+  border-right: 4px solid var(--primary-color);
+}
+
+[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .tab-item {
+  margin-right: 0;
+  margin-left: 2rem;
+}
+
+/* Accordion navigation */
+.accordion {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.5rem;
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--text-primary);
+}
+
+.accordion-header:hover {
+  background-color: var(--bg-secondary);
+}
+
+.accordion-header[aria-expanded="true"] {
+  background-color: var(--bg-secondary);
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 0 1.5rem 1rem;
+  display: none;
+}
+
+.accordion-content[aria-hidden="false"] {
+  display: block;
+}
+
+[dir="rtl"] .accordion-header {
+  text-align: right;
+}
